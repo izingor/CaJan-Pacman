@@ -1,5 +1,5 @@
 'use strict';
-const PACMAN = `<img id = "pacman" src="../imgs/pacman.gif" />`;
+const PACMAN = `<img id = "pacman" src="imgs/pacman.gif" />`;
 
 var gPacman;
 
@@ -36,6 +36,7 @@ function movePacman(ev) {
 
     if (nextCellContent === FOOD) {
         updateScore(1);
+        //gFoodCounter--
         gFood = foodCounter(gBoard);
         console.log(gFood);
     }

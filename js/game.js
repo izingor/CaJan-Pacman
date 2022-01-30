@@ -87,22 +87,19 @@ function victory() {
 
 
 function bonus(board) {
-    var cells = [];
-    var cell;
+    var emptyCells = [];
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[0].length; j++) {
             if (gBoard[i][j] === EMPTY) {
-                cell = { i: i, j: j };
-                cells.push(cell);
-
+                emptyCells.push({ i: i, j: j });
             } else {
                 continue;
             }
         }
     }
-    cells = shuffleArray(cells);
-    gBoard[cells[0].i][cells[0].j] = BONUS;
-    renderCell(cells[0], BONUS);
+    emptyCells = shuffleArray(emptyCells);
+    gBoard[emptyCells[0].i][emptyCells[0].j] = BONUS;
+    renderCell(emptyCells[0], BONUS);
 }
 
 function foodCounter(board) {

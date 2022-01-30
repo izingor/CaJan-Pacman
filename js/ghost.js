@@ -43,8 +43,7 @@ function moveGhost(ghost) {
     };
     var nextCellContent = gBoard[nextLocation.i][nextLocation.j];
 
-    if (nextCellContent === WALL) return;
-    if (nextCellContent === GHOST) return;
+    if (nextCellContent === WALL || nextCellContent === GHOST) return;
     if (gBoard[ghost.location.i][ghost.location.j] === BONUS) ghost.currCellContent = BONUS;
     if (nextCellContent === PACMAN) {
         if (gPacman.isSuper) return;
